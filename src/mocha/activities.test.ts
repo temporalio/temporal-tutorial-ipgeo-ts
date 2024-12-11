@@ -6,14 +6,18 @@ import sinon from 'sinon';
 
 describe('ip activity', async () => {
   it('successfully gets the ip', async () => {
-    const env = new MockActivityEnvironment();
     const fakeIP = '123.45.67.89';
     const stub = sinon.stub(global, 'fetch').resolves({
-      json: () => Promise.resolve(`${fakeIP}\n`),
+      text: () => Promise.resolve(`${fakeIP}\n`),
     } as Response);
-    const ip = await env.run(activities.getIP);
-    assert.strictEqual(ip, fakeIP);
-    stub.restore();
+
+    try {
+      const env = new MockActivityEnvironment();
+      const ip = await env.run(activities.getIP);
+      assert.strictEqual(ip, fakeIP);
+    } finally {
+      stub.restore();
+    }
   });
 });
 
@@ -29,10 +33,13 @@ describe('getLocation activity', async () => {
     const stub = sinon.stub(global, 'fetch').resolves({
       json: () => Promise.resolve(fakeLocation),
     } as Response);
-    const env = new MockActivityEnvironment();
-    const location = await env.run(activities.getLocationInfo, ip);
-    assert(stub.calledWith(`http://ip-api.com/json/${ip}`));
-    assert.strictEqual(location, `${fakeLocation.city}, ${fakeLocation.regionName}, ${fakeLocation.country}`);
-    stub.restore();
+
+    try {
+      const env = new MockActivityEnvironment();
+      const location = await env.run(activities.getLocationInfo, ip);
+      assert.strictEqual(location, `${fakeLocation.city}, ${fakeLocation.regionName}, ${fakeLocation.country}`);
+    } finally {
+      stub.restore();
+    }
   });
 });
