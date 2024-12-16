@@ -1,4 +1,4 @@
-// @@@SNIPSTART ts-ipgeo-activitiy-test-setup
+// @@@SNIPSTART ts-ipgeo-workflow-test-setup
 import { TestWorkflowEnvironment } from '@temporalio/testing';
 import { after, before, it } from 'mocha';
 import { Worker } from '@temporalio/worker';
