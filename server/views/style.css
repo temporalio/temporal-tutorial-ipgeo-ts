@@ -1,0 +1,70 @@
+:root {
+  --border-color: #999;
+  --border-radius: 5px;
+  --box-shadow: 2px 2px 2px #999;
+  --main-bg-color: white;
+  --submit-bg-color: #333;
+  --submit-hover-bg-color: #999;
+  --submit-text-color: white;
+  --padding-size: 1em;
+}
+
+.indicator {
+  display: none;
+}
+
+.htmx-request.indicator {
+  border: 1px solid var(--border-color);
+  background-color: #ffe;
+  display: block;
+  margin-top: 1em;
+  padding: var(--padding-size);
+  width: 100%;
+}
+
+html, body, main {
+  height: 100%;
+}
+
+body, main, form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body, main {
+  align-items: center;
+}
+
+body {
+  background-color: #ddd;
+}
+
+main {
+  width: 40%;
+}
+
+form {
+  background-color: var(--main-bg-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--box-shadow);
+  padding: var(--padding-size);
+  width: 100%;
+}
+
+textarea, input[type=submit] {
+  margin: 1em 0;
+  padding: var(--padding-size);
+}
+
+input[type=submit] {
+  background-color: var(--submit-bg-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  color: var(--submit-text-color);
+}
+
+input[type=submit]:hover {
+  background-color: var(--submit-hover-bg-color);
+}

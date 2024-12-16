@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Get IP Form</title>
+    <script src="htmx.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <div id="loadingMessage" class="indicator">
+        Processing...
+      </div>
+      <form hx-post="/submit"
+            hx-disabled-elt="#submit"
+            hx-target="#response"
+            hx-swap="innerHTML"
+            hx-indicator="#loadingMessage">
+        <label for="message">Message</label>
+        <input id="name" required name="name">
+        <input id="submit" value="Get Address" type="submit">
+
+      </form>
+      <div id="response"></div>
+    </main>
+  </body>
+</html>
