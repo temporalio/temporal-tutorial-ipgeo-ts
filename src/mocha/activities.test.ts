@@ -1,4 +1,4 @@
-// @@@SNIPSTART ts-ipgeo-activitiy-test-setup
+// @@@SNIPSTART ts-ipgeo-activity-test-setup
 import { MockActivityEnvironment } from '@temporalio/testing';
 import { describe, it } from 'mocha';
 import * as activities from '../activities';
@@ -6,7 +6,7 @@ import assert from 'assert';
 import sinon from 'sinon';
 // @@@SNIPEND
 
-// @@@SNIPSTART ts-ipgeo-activitiy-test-ip
+// @@@SNIPSTART ts-ipgeo-activity-test-ip
 describe('ip activity', async () => {
   it('successfully gets the ip', async () => {
     const fakeIP = '123.45.67.89';
@@ -25,7 +25,7 @@ describe('ip activity', async () => {
 });
 // @@@SNIPEND
 
-// @@@SNIPSTART ts-ipgeo-activitiy-test-location
+// @@@SNIPSTART ts-ipgeo-activity-test-location
 describe('getLocation activity', async () => {
   it('successfully gets the location', async () => {
     const ip = '123.45.67.89';
