@@ -1,8 +1,8 @@
+// @@@SNIPSTART ts-ipgeo-workflow-imports
 import * as workflow from '@temporalio/workflow';
 
 // Only import the activity types
 import type * as activities from './activities';
-
 
 // Load Activities and assign the Retry Policy
 const { getIP, getLocationInfo} = workflow.proxyActivities<typeof activities>({
@@ -14,7 +14,9 @@ const { getIP, getLocationInfo} = workflow.proxyActivities<typeof activities>({
   },
   startToCloseTimeout: '1 minute', // maximum time allowed for a single Activity Task Execution.
 });
+// @@@SNIPEND
 
+// @@@SNIPSTART ts-ipgeo-workflow-code
 // The Temporal Workflow.
 // Just a TypeScript function.
 export async function getAddressFromIP(name: string): Promise<string> {
@@ -32,3 +34,4 @@ export async function getAddressFromIP(name: string): Promise<string> {
   }
 
 }
+// @@@SNIPEND
