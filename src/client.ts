@@ -1,3 +1,4 @@
+// @@@SNIPSTART ts-ipgeo-cli-client
 import { Connection, Client } from '@temporalio/client';
 import { getAddressFromIP } from './workflows';
 import { nanoid } from 'nanoid';
@@ -27,3 +28,4 @@ run().catch((err) => {
   console.error(err);
   process.exit(1);
 });
+// @@@SNIPEND

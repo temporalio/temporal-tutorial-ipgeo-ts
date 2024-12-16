@@ -1,9 +1,12 @@
+// @@@SNIPSTART ts-ipgeo-activitiy-test-setup
 import { TestWorkflowEnvironment } from '@temporalio/testing';
 import { after, before, it } from 'mocha';
 import { Worker } from '@temporalio/worker';
 import { getAddressFromIP } from '../workflows';
 import assert from 'assert';
+// @@@SNIPEND
 
+// @@@SNIPSTART ts-ipgeo-workflow-test-workflow
 describe('getAddressFromIP', () => {
   let testEnv: TestWorkflowEnvironment;
 
@@ -39,3 +42,4 @@ describe('getAddressFromIP', () => {
     assert.equal(result, "Hello, Temporal. Your IP is 1.1.1.1 and your location is Planet Earth");
   });
 });
+// @@@SNIPEND
