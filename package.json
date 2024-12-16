@@ -27,7 +27,7 @@
     "@temporalio/client": "^1.11.5",
     "@temporalio/worker": "^1.11.5",
     "@temporalio/workflow": "^1.11.5",
-    "axios": "^1.7.2",
+    "axios": "^1.7.4",
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
     "nanoid": "3.x"
